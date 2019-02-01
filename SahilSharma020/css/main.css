@@ -1,0 +1,23 @@
+table{
+  margin: 5em auto;
+}
+
+button{
+  border: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+.left{
+  border-right: 5px solid black;
+}
+
+
+.top{
+  border-top: 5px solid black;
+}
+
+td{
+  padding: 30px;
+}
