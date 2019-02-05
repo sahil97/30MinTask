@@ -4,8 +4,10 @@ table{
 
 button{
   border: 0;
-  height: 100%;
-  width: 100%;
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  font-size: 50px;
 }
 
 
@@ -16,8 +18,4 @@ button{
 
 .top{
   border-top: 5px solid black;
-}
-
-td{
-  padding: 30px;
 }
