@@ -9,7 +9,12 @@
   <title>Document</title>
 </head>
 <body>
-  <table>
+  <header>
+    <h5><span id="p1">Player 1</span> is playing X<h5>
+    <h5><span id="p2">Player 2</span> is playing O<h5>
+  </header>
+
+  <table class="tic">
     <tr>
       <td class="left"><button type="button" name="button" value="1"></button></td>
       <td class="left"><button type="button" name="button" value="2"></button></td>
@@ -25,6 +30,18 @@
       <td class="left"><button type="button" name="button" value="8"></button></td>
       <td><button type="button" name="button" value="9"></button></td>
     </tr>
+    <div id="scorecard">
+      <table class="table table-striped points" id="points">
+        <thead>
+          <tr>
+            <th scope="col">Users</th>
+            <th scope="col">Scores</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </div>
 
   </table>
   <script

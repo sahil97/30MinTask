@@ -1,4 +1,4 @@
-table{
+.tic{
   margin: 5em auto;
 }
 
@@ -18,4 +18,20 @@ button{
 
 .top{
   border-top: 5px solid black;
+}
+
+.bottom{
+  border-bottom: 2px solid black;
+}
+
+.points{
+  border: 1px solid black;
+  max-width:300px;
+  margin: auto;
+}
+
+header{
+  margin: 30px 0 0;
+  display: block;
+  text-align: center;
 }
