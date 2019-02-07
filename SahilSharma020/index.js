@@ -10,7 +10,7 @@ $(document).ready(function(){
 
   console.log("users",users);
 
-
+  alert("Please enter usernames(case-sensitive).  If your names are not in DB new users will be created");
   var user1=prompt("Enter Player 1 name","Player1");
   var user2=prompt("Enter Player 2 name","Player2");
 
@@ -100,7 +100,7 @@ $(document).ready(function(){
   var p2 = document.getElementById('p2');
   p2.innerHTML = users[1].name;
 
-
+  console.log(users[0]._id);
 
 
 
@@ -173,12 +173,94 @@ $(document).ready(function(){
               alert("0 won");
               users[1].Score = users[1].Score + 10;
               users[0].Score = users[0].Score -5;
+
+              var data0 = {"Score": users[0].Score};
+              var data1 = {"Score": users[1].Score};
+
+                var sendusers0 = {
+                  "async": false,
+                  "crossDomain": true,
+                  "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[0]._id,
+                  "method": "PUT",
+                  "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "5c5bc720f210985199db5461",
+                    "cache-control": "no-cache"
+                  },
+                  "processData": false,
+                  "data": JSON.stringify(data0)
+                }
+
+                var sendusers1 = {
+                  "async": false,
+                  "crossDomain": true,
+                  "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[1]._id,
+                  "method": "PUT",
+                  "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "5c5bc720f210985199db5461",
+                    "cache-control": "no-cache"
+                  },
+                  "processData": false,
+                  "data": JSON.stringify(data1)
+                }
+
+
+                $.ajax(sendusers0).done(function (response) {
+                  console.log(response);
+                });
+                $.ajax(sendusers1).done(function (response) {
+                  console.log(response);
+                });
+
+
               scorecardUpdate(users);
             }
             else if(flag == 1){
               alert("X won");
               users[0].Score = users[0].Score + 10;
               users[1].Score = users[1].Score - 5;
+
+              var data0 = {"Score": users[0].Score};
+              var data1 = {"Score": users[1].Score};
+
+                var sendusers0 = {
+                  "async": false,
+                  "crossDomain": true,
+                  "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[0]._id,
+                  "method": "PUT",
+                  "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "5c5bc720f210985199db5461",
+                    "cache-control": "no-cache"
+                  },
+                  "processData": false,
+                  "data": JSON.stringify(data0)
+                }
+
+                var sendusers1 = {
+                  "async": false,
+                  "crossDomain": true,
+                  "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[1]._id,
+                  "method": "PUT",
+                  "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": "5c5bc720f210985199db5461",
+                    "cache-control": "no-cache"
+                  },
+                  "processData": false,
+                  "data": JSON.stringify(data1)
+                }
+
+
+                $.ajax(sendusers0).done(function (response) {
+                  console.log(response);
+                });
+                $.ajax(sendusers1).done(function (response) {
+                  console.log(response);
+                });
+
+
               scorecardUpdate(users);
             }
             reset();
