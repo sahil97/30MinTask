@@ -72,6 +72,46 @@ $(document).ready(function(){
       console.log(response);
     });
   }
+  else if(users.length==1){
+    if(users[0].name == user1){
+      var jsondata = {"name": user2,"Score": 0};
+      var sendusers = {
+        "async": false,
+        "crossDomain": true,
+        "url": "https://tictactoe-502a.restdb.io/rest/tic-users",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "5c5bc720f210985199db5461",
+          "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(jsondata)
+      }
+      $.ajax(sendusers).done(function (response) {
+        console.log(response);
+      });
+    }
+    else if(users[0].name == user2){
+      var jsondata = {"name": user1,"Score": 0};
+      var sendusers = {
+        "async": false,
+        "crossDomain": true,
+        "url": "https://tictactoe-502a.restdb.io/rest/tic-users",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "5c5bc720f210985199db5461",
+          "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(jsondata)
+      }
+      $.ajax(sendusers).done(function (response) {
+        console.log(response);
+      });
+    }
+  }
 
   var url = "https://tictactoe-502a.restdb.io/rest/tic-users?q={%22$or%22:%20[{%22name%22:%20%22"+user1+"%22},%20{%22name%22:%20%22"+user2+"%22}]}"
   var getusers = {
@@ -178,7 +218,7 @@ $(document).ready(function(){
               var data1 = {"Score": users[1].Score};
 
                 var sendusers0 = {
-                  "async": false,
+                  "async": true,
                   "crossDomain": true,
                   "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[0]._id,
                   "method": "PUT",
@@ -192,7 +232,7 @@ $(document).ready(function(){
                 }
 
                 var sendusers1 = {
-                  "async": false,
+                  "async": true,
                   "crossDomain": true,
                   "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[1]._id,
                   "method": "PUT",
@@ -225,7 +265,7 @@ $(document).ready(function(){
               var data1 = {"Score": users[1].Score};
 
                 var sendusers0 = {
-                  "async": false,
+                  "async": true,
                   "crossDomain": true,
                   "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[0]._id,
                   "method": "PUT",
@@ -239,7 +279,7 @@ $(document).ready(function(){
                 }
 
                 var sendusers1 = {
-                  "async": false,
+                  "async": true,
                   "crossDomain": true,
                   "url": "https://tictactoe-502a.restdb.io/rest/tic-users/"+users[1]._id,
                   "method": "PUT",
